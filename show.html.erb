@@ -1,0 +1,15 @@
+<div class="container">
+    <h2><%= link_to 'Go Back', items_path %> </h2>
+    <h2><strong>Description</strong> : <%= @item.description %> </h2>
+    <h3><strong>Price</strong> : $<%= @item.price %> </h3>
+    <img class="show-img" src="<%= @item.img_url %>" alt="<%= @item.description %>">
+    <h2><%= link_to "Pay now", new_checkout_path(:item_id => @item.id) %></h2>
+    
+      <!-- <%= button_to 'Edit item', edit_item_path(@item), method: :get , class: "btn" %> -->
+    
+  </div>
+</div> 
+
+
+
+

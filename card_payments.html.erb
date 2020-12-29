@@ -1,0 +1,48 @@
+<div class="index-container">
+<h1> Card Payments </h1>
+        <article class="content compact">
+            <section>
+                <table cellpadding="0" cellspacing="0">
+                    <% @card_payments.each do |payment| %>
+                    <tbody>
+                    <tr>
+                        <th>id</th>
+                        <td><%= payment.transaction_id %></td>
+                    </tr>
+                    <tr>
+                        <th>type</th>
+                        <td><%= payment.transaction_type %></td>
+                    </tr>
+                    <tr>
+                        <th>amount</th>
+                    <td><%= payment.transaction_amount %></td>
+                    </tr>
+                    <tr>
+                        <th>currency</th>
+                        <td><%= payment.transaction_currency %></td>
+                    </tr>
+                    <tr>
+                        <th>instrument </th>
+                        <td><%= payment.transaction_instrument %></td>
+                    </tr>
+                    <tr>
+                        <th>status</th>
+                        <td><%= payment.transaction_status %></td>
+                    </tr>
+                    <tr>
+                        <th>created_at</th>
+                        <td><%= payment.created_at %></td>
+                    </tr>
+                    <tr>
+                        <th> *************** </th>
+                        <td>*******************************</td>
+                    </tr>
+                    <% end %>
+                    </tbody>
+                </table>
+            </section>
+        </article>
+        
+
+</div>
+

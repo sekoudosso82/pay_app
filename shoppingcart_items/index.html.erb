@@ -1,0 +1,12 @@
+<div class="index-container">
+
+    <% @shoppingcart_items.each do |item| %>
+        <div class="index-tile">
+            <h2><%= link_to "More details", item %></h2>
+            <h2><%= item.item.description %> </h2>
+            <h2>Price: $<%= item.item.price %> </h2>
+            <img class="index-img" src="<%= item.item.img_url %>" alt="<%= item.item.description %>">
+        
+        </div>
+    <% end %>
+</div>

@@ -1,0 +1,26 @@
+
+<div class="checkout_div">
+    <h3>Total: $<%= @shoppingcarts.reduce(0) { |sum, elmnt| sum + elmnt.item.price } %> </h3>
+    <h3>Tax: $<%= (@shoppingcarts.reduce(0) { |sum, elmnt| sum + elmnt.item.price }*0.07).round(2) %></h3>
+    
+    <h3>Net to Pay: $<%= (@shoppingcarts.reduce(0) { |sum, elmnt| sum + elmnt.item.price })+
+                         (@shoppingcarts.reduce(0) { |sum, elmnt| sum + elmnt.item.price }*0.07.round(2)) %></h3>
+    <button id="">Check out</button>
+
+
+   
+</div>
+<div class="index-container">
+
+    <% @shoppingcarts.each do |elmnt| %>
+        <div class="index-tile">
+            
+            <h2><%= elmnt.item.description %> </h2>
+            <h2>Price: $<%= elmnt.item.price %> </h2>
+            <img class="index-img" src="<%= elmnt.item.img_url %>" alt="<%= elmnt.item.description %>">
+            
+            <%= button_to 'Delete', shoppingcart_item_path(elmnt), method: :delete %> 
+
+        </div>
+    <% end %>
+</div>
